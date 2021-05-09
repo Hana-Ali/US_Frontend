@@ -9,6 +9,7 @@ import navbarLinks from './MenuItems';
 const LinksContainer = styled.div`
     display: flex;
     align-items: center;
+    position: relative;
 `;
 
 // Styling the ul components, or the menu
@@ -16,6 +17,7 @@ const LinksMenu = styled.ul`
     display: flex;
     text-transform: uppercase;
     letter-spacing: 3px;
+    position: relative;
 `;
 
 // Styling each li
@@ -26,14 +28,16 @@ const LinksItem = styled.li`
     justify-content: space-between;
     margin-top: 15px;
     padding: 0 1.1rem;
+    position: relative;
 `;
 
 // Styling each link 
 const Link = styled.a`
     text-decoration: none;
     color: black;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     margin: 0 2rem;
+    position: relative;
 
     &:hover{
         color: rgb(24, 23, 23);

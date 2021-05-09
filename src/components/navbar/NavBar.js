@@ -6,6 +6,8 @@ import styled from "styled-components";
 import Logo from "../logo/Logo";
 // Importing the links
 import NavLinks from "./NavLinks.js";
+// Importing the search bar
+import SearchBar from './SearchBar.js'
 
 // ---------------------------- Stylizing the navbar using styled-components
 
@@ -13,6 +15,7 @@ import NavLinks from "./NavLinks.js";
 const Wrapper = styled.div`
     display: flex;
     width: 100%;
+    max-width: 1920px;
     height: 10rem;
     align-items: center;
     padding: 0 1.5 rem;
@@ -21,6 +24,7 @@ const Wrapper = styled.div`
     border-bottom: 2px solid rgba(255,255,255,.05);
     margin-left: 50px;
     margin-right: 50px;
+    position: relative;
 `;
 
 // NavBar is separated into left, center and right
@@ -28,6 +32,7 @@ const Wrapper = styled.div`
 // Left side of Navbar
 const LeftSide = styled.div`
     display: flex;
+    position: relative;
 `;
 
 // Center of Navbar
@@ -38,38 +43,40 @@ const Center = styled.div`
     height: 100%;
     justify-content: center;
     align-items: center;
+    position: relative;
 `;
 
 // Right side of Navbar
 const RightSide = styled.div`
     display: flex;
+    position: relative;
 `;
-
-// Declaration of navbar links
-/*const navbarLinks = [
-    "Home Page",
-    "Illustrator Gallery",
-    "Art Gallery",
-    "Challenges"
-];*/
 
 // ---------------------------- Creating the NavBar function/component
 function NavBar(props) {
     // Setting the return value, or the component
     return(
-        <Wrapper>
-            {/* For the left side, we want to import the Logo component */}
-            <LeftSide>
-                <Logo />
-            </LeftSide>
+        // Note that rather than going insane trying to create responsive width-changing, we use the bootstrap navbar container here so that we can inherit the 
+        // responsiveness of the container-fluid and I don't have to go on 10 websites posting the same "how do i remove window scrollin!!!! help!!" question :)
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <Wrapper>
+                    {/* For the left side, we want to import the Logo component */}
+                    <LeftSide>
+                        <Logo />
+                    </LeftSide>
 
-            <Center>
-                {/* For the middle, we want to add the different links */}
-                <NavLinks />
-            </Center>
+                    <Center>
+                        {/* For the middle, we want to add the different links */}
+                        <NavLinks />
+                    </Center>
 
-            <RightSide></RightSide>
-        </Wrapper>
+                    <RightSide>
+                        <SearchBar />
+                    </RightSide>
+                </Wrapper>
+            </div>
+        </nav>
     );
 }
 
