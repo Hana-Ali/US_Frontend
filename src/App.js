@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+// Importing NavBar
+import NavBar from './components/navbar/NavBar';
 
+
+
+// Actual App function, has our code
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    {/* Navbar Declaration, with statement of what links to add */}
+      <NavBar />
+      
     </div>
   );
 }
