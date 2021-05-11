@@ -9,14 +9,17 @@ import USLogo from "../../assets/images/bunny.png"
 const LogoWrapper = styled.div`
     display: flex;
     align-items: center;
+    background-color: transparent;
 `;
 
 // Styling the actual logo, as well as its container
 const LogoImg = styled.div`
     width: 50px;
     height: 50px;
+    background-color: transparent;
 
     img {
+        background: transparent;
         width: 100%;
         height: 100%;
     }
@@ -25,6 +28,7 @@ const LogoImg = styled.div`
 // Styling the information next to the logo
 const LogoText = styled.h2`
     text-transform: uppercase;
+    background: transparent;
     font-size: 3rem;
     font-weight: bold;
     margin-left: 4px;

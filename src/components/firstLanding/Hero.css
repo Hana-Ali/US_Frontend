@@ -1,0 +1,79 @@
+.parentOfAll{
+    position: relative;
+    width: 100%;
+    height: 1000vh;
+    padding: 100px;
+}
+
+.firstGroup{
+    position: relative;
+    width: 100%;
+}
+
+.firstGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.secondGroup{
+    position: relative;
+    width: 100%;
+}
+
+.secondGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.thirdGroup{
+    position: relative;
+    width: 100%;
+}
+
+.thirdGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.fourthGroup{
+    position: relative;
+    width: 100%;
+}
+
+.fourthGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.fifthGroup{
+    position: relative;
+    width: 100%;
+}
+
+.fifthGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sixthGroup{
+    position: relative;
+    width: 100%;
+}
+
+.sixthGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}

@@ -1,5 +1,5 @@
 // Import react
-import React from 'react';
+import React, { useState } from 'react';
 // Import the styling
 import styled from 'styled-components';
 // Importing the search icon
@@ -9,22 +9,19 @@ import { Search } from '@styled-icons/heroicons-outline/Search'
 const SearchBarContainer = styled.div`
     display: flex;
     position: relative;
+    background-color: transparent;
 `;
 
 // Styling the input text field
 const SearchBarInput = styled.input`
-    border: 0;
     padding: 0;
-    width: 0px;
     height: 35px;
-    border-radius: 3px
+    border-radius: 3px;
+    border: 2px solid black;
     position: relative;
-
-    &.active{
-        width: 250px;
-        padding: 0 10px;
-        transition: all .5s .2s ease;
-    }
+    width: 250px;
+    padding: 0 10px;
+    background-color: transparent;
 `;
 
 // Styling the container for the search icon
@@ -37,12 +34,6 @@ const SearchIconContainer = styled.div`
     background: black;
     border-radius: 3px;
     color: black;
-    transition: all .5 .5s ease;
-
-    &.active{
-        background: beige;
-        transition: all .3s ease;
-    }
 `;
 
 const SearchIcon = styled(Search)`
@@ -52,14 +43,22 @@ const SearchIcon = styled(Search)`
     color: white;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    background: black;
 `;
 
 // Creating the search bar
+// -------------------------- TOGGLE NOT WORKING
 function SearchBar(props) {
+    const [isActive, setActive] = useState(false);
+
+    const toggleClass = () => {
+        setActive(!isActive);
+    };
+
     return(
         <SearchBarContainer>
-            <SearchBarInput />
-            <SearchIconContainer>
+            <SearchBarInput className={isActive ? 'active1' : null} />
+            <SearchIconContainer className={isActive ? 'active1' : null} onClick={toggleClass} >
                 <a href="#"><SearchIcon /></a>
             </SearchIconContainer>
         </SearchBarContainer>

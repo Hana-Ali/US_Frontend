@@ -10,6 +10,7 @@ const LinksContainer = styled.div`
     display: flex;
     align-items: center;
     position: relative;
+    background-color: transparent;
 `;
 
 // Styling the ul components, or the menu
@@ -18,6 +19,7 @@ const LinksMenu = styled.ul`
     text-transform: uppercase;
     letter-spacing: 3px;
     position: relative;
+    background-color: transparent;
 `;
 
 // Styling each li
@@ -29,6 +31,7 @@ const LinksItem = styled.li`
     margin-top: 15px;
     padding: 0 1.1rem;
     position: relative;
+    background-color: transparent;
 `;
 
 // Styling each link 
@@ -38,6 +41,8 @@ const Link = styled.a`
     font-size: 1.3rem;
     margin: 0 2rem;
     position: relative;
+    background-color: transparent;
+    font-family: 'Open Sans', sans-serif;
 
     &:hover{
         color: rgb(24, 23, 23);
@@ -45,11 +50,12 @@ const Link = styled.a`
 
     &::after {
         content: '';
+        position: absolute;
         width: 100%;
         height: 2px;
         background-color: black;
         left: 0;
-        bottom: -3px;
+        bottom: -5px;
         transform: scaleX(0);
         transform-origin: left;
         transition: transform .5s ease;
