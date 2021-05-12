@@ -36,6 +36,8 @@ import Tablet from '../../assets/images/heroObjects/tablet.png';
 import TeddyBear from '../../assets/images/heroObjects/teddyBear.png';
 import SufferingBackground from '../../assets/images/heroObjects/sufferingBackground.png';
 import SufferingIcon from '../../assets/images/heroObjects/sufferingIcon.png';
+import SufferingIconLeft from '../../assets/images/heroObjects/sufferingIconLeft.png';
+
 
 // Main animation variant for the parent container
 const container = {
