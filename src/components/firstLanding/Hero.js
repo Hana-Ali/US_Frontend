@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 // importing the images container
 import IndividualImage from './IndividualImage'
+import HoverImages from './HoverImages'
 // Importing all images from folder of images for desk objects
 import Bowl from '../../assets/images/heroObjects/bowl.png';
 import Box from '../../assets/images/heroObjects/box.png';
@@ -33,8 +34,10 @@ import RightBox from '../../assets/images/heroObjects/rightBox.png';
 import Screen from '../../assets/images/heroObjects/screen.png';
 import Tablet from '../../assets/images/heroObjects/tablet.png';
 import TeddyBear from '../../assets/images/heroObjects/teddyBear.png';
+import SufferingBackground from '../../assets/images/heroObjects/sufferingBackground.png';
+import SufferingIcon from '../../assets/images/heroObjects/sufferingIcon.png';
 
-// Variants for the animations
+// Main animation variant for the parent container
 const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -45,16 +48,37 @@ const container = {
             staggerChildren: 0.2
         }
     }
-}
+};
 
+// Animation variant for non-hoverable objects
 const item = {
     hidden: { y: 20, opacity: 0 },
     visible: {
         y: 0,
         opacity: 1
     }
-}
+};
 
+// Animation variant for hoverable objects
+const hoverItem = {
+    rest: { 
+        y: 0,
+        opacity: 0,
+        scale: 0,
+    },
+    show: {
+        opacity: 1,
+        scale: 1,
+        transition: { delay: 7.5 }
+    },
+    hover: {
+        y: -20,
+        transition: {
+            duration: 0.4,
+            type: "tween",
+        }
+    }
+};
 
 // Creating the function for the hero
 function Hero(props) {
@@ -72,7 +96,10 @@ function Hero(props) {
             {/* Second group staggered together; notes, teddy, octopus, pencil case, pens, rightBox */}
                 <IndividualImage className="notes" imageVariant={item} imageSource={Notes} style={{ "z-index": "1" }} />
                 <IndividualImage className="teddyBear" imageVariant={item} imageSource={TeddyBear} style={{ "z-index": "0" }} />
+
+                {/* HOVERABLE OCTOPUS */}
                 <IndividualImage className="octopus" imageVariant={item} imageSource={Octopus} style={{ "z-index": "0" }} />
+
                 <IndividualImage className="pencilCase" imageVariant={item} imageSource={PencilCase} style={{ "z-index": "10" }} />
                 <IndividualImage className="chicken" imageVariant={item} imageSource={Chicken} style={{ "z-index": "10" }}/>
                 <IndividualImage className="cup1" imageVariant={item} imageSource={Cup1} style={{ "z-index": "1" }} />
@@ -102,6 +129,11 @@ function Hero(props) {
 
             {/* Screen special */}
                 <IndividualImage className="screen" imageVariant={item} imageSource={Screen} style={{ "z-index": "0" }} />
+                <IndividualImage className="windowsXP" imageVariant={item} imageSource={SufferingBackground} style={{ "z-index" : "20" }} />
+                <a href="#">
+                    <HoverImages className="sufferingIcon" imageVariant={hoverItem} imageSource={SufferingIcon} style={{ "z-index": "20" }} />
+                </a>
+
             </div>
 
         </motion.div>
