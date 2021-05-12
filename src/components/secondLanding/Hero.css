@@ -1,0 +1,140 @@
+.parentOfAll{
+    position: relative;
+    width: 100%;
+    padding: 50px 200px;
+}
+
+.firstGroup{
+    position: relative;
+    width: 100%;
+    animation: fadeIn 3s;
+    animation-delay: 0.3s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+}
+
+.firstGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.secondGroup{
+    position: relative;
+    width: 100%;
+    animation: fadeIn 3s;
+    animation-delay: 1s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+}
+
+.secondGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.thirdGroup{
+    position: relative;
+    width: 100%;
+    animation: fadeIn 3s;
+    animation-delay: 2s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+}
+
+.thirdGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.fourthGroup{
+    position: relative;
+    width: 100%;
+    animation: fadeIn 3s;
+    animation-delay: 3s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+}
+
+.fourthGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.fifthGroup{
+    position: relative;
+    width: 100%;
+    animation: fadeIn 3s;
+    animation-delay: 4s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+}
+
+.fifthGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sixthGroup{
+    position: relative;
+    width: 100%;
+    animation: fadeIn 3s;
+    animation-delay: 5s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+}
+
+.sixthGroup img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+@keyframes fadeIn{
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}

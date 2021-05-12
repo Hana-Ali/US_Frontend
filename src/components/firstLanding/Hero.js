@@ -34,159 +34,77 @@ import Screen from '../../assets/images/heroObjects/screen.png';
 import Tablet from '../../assets/images/heroObjects/tablet.png';
 import TeddyBear from '../../assets/images/heroObjects/teddyBear.png';
 
-// Creating a wrapper for the images
-const ImageWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-`;
-
 // Variants for the animations
 const container = {
-    hidden: { opacity: 0 },
-    show: {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
         opacity: 1,
+        scale: 1,
         transition: {
-            staggerChildren: 0.3
-        }
-    }
-}
-const container2 = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.05
-        }
-    }
-}
-const container3 = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
+            delayChildren: 0.3,
             staggerChildren: 0.2
         }
     }
 }
-const container4 = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.05
-        }
-    }
-}
-const container5 = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.8
-        }
-    }
-}
-const screenContainer = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            delay: 1
-        }
-    }
-}
+
 const item = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 }
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1
+    }
 }
 
 
 // Creating the function for the hero
 function Hero(props) {
     return(
-        <div className="parentOfAll">
+        <motion.div className="parentOfAll"
+        variants={container}
+        initial="hidden"
+        animate="visible">
 
             {/* First group staggered together; desk, and deskBack */}
-            <motion.div className="firstGroup"
-            variant={container}
-            initial="hidden"
-            animate="show"
-            >
-                <IndividualImage className="deskBack" variant={item} imageSource={DeskBack} />
-                <IndividualImage className="desk" variant={item} imageSource={Desk} />
-            </motion.div>
+            <div className="allGroups">
+                <IndividualImage className="deskBack" imageVariant={item} imageSource={DeskBack} style={{ "z-index": "0" }}/>
+                <IndividualImage className="desk" imageVariant={item} imageSource={Desk} style={{ "z-index": "0" }}/>
             
             {/* Second group staggered together; notes, teddy, octopus, pencil case, pens, rightBox */}
-            <motion.div className="secondGroup"
-                variant={container2}
-                initial="hidden"
-                animate="show"
-            >
-                <IndividualImage className="notes" variant={item} imageSource={Notes} />
-                <IndividualImage className="teddyBear" variant={item} imageSource={TeddyBear} />
-                <IndividualImage className="octopus" variant={item} imageSource={Octopus} />
-                <IndividualImage className="pencilCase" variant={item} imageSource={PencilCase} />
-                <IndividualImage className="chicken" variant={item} imageSource={Chicken} />
-                <IndividualImage className="cup1" variant={item} imageSource={Cup1} />
-                <IndividualImage className="cup2" variant={item} imageSource={Cup2} />
-                <IndividualImage className="cup3" variant={item} imageSource={Cup3} />
-
-            </motion.div>
+                <IndividualImage className="notes" imageVariant={item} imageSource={Notes} style={{ "z-index": "1" }} />
+                <IndividualImage className="teddyBear" imageVariant={item} imageSource={TeddyBear} style={{ "z-index": "0" }} />
+                <IndividualImage className="octopus" imageVariant={item} imageSource={Octopus} style={{ "z-index": "0" }} />
+                <IndividualImage className="pencilCase" imageVariant={item} imageSource={PencilCase} style={{ "z-index": "10" }} />
+                <IndividualImage className="chicken" imageVariant={item} imageSource={Chicken} style={{ "z-index": "10" }}/>
+                <IndividualImage className="cup1" imageVariant={item} imageSource={Cup1} style={{ "z-index": "1" }} />
+                <IndividualImage className="cup2" imageVariant={item} imageSource={Cup2} style={{ "z-index": "1" }} />
+                <IndividualImage className="cup3" imageVariant={item} imageSource={Cup3} style={{ "z-index": "1" }} />
 
             {/* Third group staggered together; games, box (both), postcard1 and 2, bowl, statue, bunny */}
-            <motion.div className="thirdGroup"
-                variant={container3}
-                initial="hidden"
-                animate="show"
-            >
-                <IndividualImage className="games" variant={item} imageSource={Games} />
-                <IndividualImage className="box" variant={item} imageSource={Box} />
-                <IndividualImage className="postcard1" variant={item} imageSource={Postcard1} />
-                <IndividualImage className="bowl" variant={item} imageSource={Bowl} />
-                <IndividualImage className="postcard2" variant={item} imageSource={Postcard2} />
-                <IndividualImage className="figure" variant={item} imageSource={Figure} />
-                <IndividualImage className="bunny" variant={item} imageSource={Bunny} />
-                <IndividualImage className="rightBox" variant={item} imageSource={RightBox} />
-
-            </motion.div>
+                <IndividualImage className="games" imageVariant={item} imageSource={Games} style={{ "z-index": "2" }} />
+                <IndividualImage className="box" imageVariant={item} imageSource={Box} style={{ "z-index": "1" }} />
+                <IndividualImage className="postcard1" imageVariant={item} imageSource={Postcard1} style={{ "z-index": "-1" }} />
+                <IndividualImage className="bowl" imageVariant={item} imageSource={Bowl} style={{ "z-index": "3" }} />
+                <IndividualImage className="postcard2" imageVariant={item} imageSource={Postcard2} style={{ "z-index": "-1" }} />
+                <IndividualImage className="figure" imageVariant={item} imageSource={Figure} style={{ "z-index": "0" }} />
+                <IndividualImage className="bunny" imageVariant={item} imageSource={Bunny} style={{ "z-index": "0" }} />
+                <IndividualImage className="rightBox" imageVariant={item} imageSource={RightBox} style={{ "z-index": "0" }} />
 
             {/* Fourth group staggered together; posters, headset, keyboard, polaroidUp */}
-            <motion.div className="fourthGroup"
-                variant={container4}
-                initial="hidden"
-                animate="show"
-            >
-                <IndividualImage className="posters" variant={item} imageSource={Posters} />
-                <IndividualImage className="headset" variant={item} imageSource={Headset} />
-                <IndividualImage className="keyboard" variant={item} imageSource={Keyboard} />
-                <IndividualImage className="polaroidUp" variant={item} imageSource={PolaroidUp} />
-
-            </motion.div>
+                <IndividualImage className="posters" imageVariant={item} imageSource={Posters} style={{ "z-index": "-1" }} />
+                <IndividualImage className="headset" imageVariant={item} imageSource={Headset} style={{ "z-index": "1" }} />
+                <IndividualImage className="keyboard" imageVariant={item} imageSource={Keyboard} style={{ "z-index": "0" }} />
+                <IndividualImage className="polaroidUp" imageVariant={item} imageSource={PolaroidUp} style={{ "z-index": "-1" }} />
 
             {/* Fifth group staggered together; cable, tablet, monitor */}
-            <motion.div className="fifthGroup"
-                variant={container5}
-                initial="hidden"
-                animate="show"
-            >
-                <IndividualImage className="cable" variant={item} imageSource={Cable} />
-                <IndividualImage className="tablet" variant={item} imageSource={Tablet} />
-                <IndividualImage className="monitor" variant={item} imageSource={Monitor} />
+                <IndividualImage className="cable" imageVariant={item} imageSource={Cable} style={{ "z-index": "-1" }} />
+                <IndividualImage className="tablet" imageVariant={item} imageSource={Tablet} style={{ "z-index": "0" }} />
+                <IndividualImage className="monitor" imageVariant={item} imageSource={Monitor} style={{ "z-index": "0" }} />
 
-            </motion.div>
+            {/* Screen special */}
+                <IndividualImage className="screen" imageVariant={item} imageSource={Screen} style={{ "z-index": "0" }} />
+            </div>
 
-            {/* Screen special div */}
-            <motion.div className="sixthGroup"
-                variant={screenContainer}
-                initial="hidden"
-                animate="show"
-            >
-                <IndividualImage className="screen" variant={item} imageSource={Screen} />
-
-            </motion.div>
-
-        </div>
+        </motion.div>
     );
 }
 

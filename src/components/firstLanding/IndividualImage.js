@@ -5,13 +5,12 @@ import { motion } from 'framer-motion';
 
 function IndividualImage(props) {
     return(
-        <motion.div className={props.className}
-            variant={props.variant}
-            initial="hidden"
-            animate="show"
-        >
-            <img src={props.imageSource} />
-        </motion.div>
+        <div className={props.className}>
+            <motion.img src={props.imageSource} 
+            style={props.style}
+            alt={props.className} 
+            variants={props.imageVariant}/>
+        </div>
     );
 }
 

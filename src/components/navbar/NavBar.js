@@ -90,8 +90,8 @@ function NavBar(props) {
     return(
         // Note that rather than going insane trying to create responsive width-changing, we use the bootstrap navbar container here so that we can inherit the 
         // responsiveness of the container-fluid and I don't have to go on 10 websites posting the same "how do i remove window scrollin!!!! help!!" question :)
-        <nav class={navbarClasses.join(" ")}>
-            <div class="container-fluid">
+        <nav className={navbarClasses.join(" ")} style={{ "z-index": "9999" }}>
+            <div className="container-fluid">
                 <Wrapper>
                     {/* For the left side, we want to import the Logo component */}
                     <LeftSide>
