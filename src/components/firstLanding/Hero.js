@@ -64,8 +64,8 @@ function Hero(props) {
         initial="hidden"
         animate="visible">
 
-            {/* First group staggered together; desk, and deskBack */}
             <div className="allGroups">
+            {/* First group staggered together; desk, and deskBack */}
                 <IndividualImage className="deskBack" imageVariant={item} imageSource={DeskBack} style={{ "z-index": "0" }}/>
                 <IndividualImage className="desk" imageVariant={item} imageSource={Desk} style={{ "z-index": "0" }}/>
             
