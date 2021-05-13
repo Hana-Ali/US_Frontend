@@ -1,9 +1,7 @@
 // importing react
-import React, { useState } from 'react';
-// importing styles
-import styled from 'styled-components';
+import React from 'react';
 // importing motion
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 // importing the images container
 import IndividualImage from './IndividualImage'
 import HoverImages from './HoverImages'
@@ -36,6 +34,7 @@ import Tablet from '../../assets/images/heroObjects/tablet.png';
 import TeddyBear from '../../assets/images/heroObjects/teddyBear.png';
 import SufferingBackground from '../../assets/images/heroObjects/sufferingBackground.png';
 import SufferingIcon from '../../assets/images/heroObjects/sufferingIcon.png';
+import SufferingIconSmall from '../../assets/images/heroObjects/sufferingIconSmall.png';
 import SufferingIconLeft from '../../assets/images/heroObjects/sufferingIconLeft.png';
 
 
@@ -133,7 +132,7 @@ function Hero(props) {
                 <IndividualImage className="screen" imageVariant={item} imageSource={Screen} style={{ "z-index": "0" }} />
                 <IndividualImage className="windowsXP" imageVariant={item} imageSource={SufferingBackground} style={{ "z-index" : "20" }} />
                 <a href="#">
-                    <HoverImages className="sufferingIcon" imageVariant={hoverItem} imageSource={SufferingIcon} style={{ "z-index": "20" }} />
+                    <HoverImages className="sufferingIcon" imageVariant={hoverItem} imageSource={SufferingIcon} style={{ "z-index": "21" }} />
                 </a>
 
             </div>

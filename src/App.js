@@ -2,10 +2,13 @@
 import NavBar from './components/navbar/NavBar';
 // Importing Hero
 import Hero from './components/firstLanding/Hero'
+// Importing About
+import About from './components/about/About';
 // Importing the css
 import './App.css'
 import './components/firstLanding/Hero.css'
 import './components/navbar/NavBar.css'
+import './components/about/About.css'
 // Importing motion
 import { motion } from 'framer-motion'
 // Importing styles
@@ -13,7 +16,7 @@ import styled from 'styled-components';
 
 
 const Margin = styled.div`
-    height: 1000vh;
+    height: 100vh;
 `;
 
 
@@ -35,6 +38,11 @@ function App() {
       <Hero />
 
       <Margin />
+
+      <About />
+
+      <Margin />
+
     </div>
   );
 }
