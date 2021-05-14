@@ -18,7 +18,7 @@ const initialContainer = {
 
 function Testimonials(props){
 
-    const { ref, inView } = useInView({ threshold: 0.1 });
+    const { ref, inView } = useInView({ threshold: 0.3 });
 
     useEffect(() => {
         console.log("use effect hook, inView = ", inView);

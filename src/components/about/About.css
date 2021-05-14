@@ -18,7 +18,11 @@
 }
 
 .headerText{
+    text-align: center;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 5vw!important;
+    text-transform: uppercase;
+    letter-spacing: 50px;
     position: relative;
+    bottom: 100px;
 }
