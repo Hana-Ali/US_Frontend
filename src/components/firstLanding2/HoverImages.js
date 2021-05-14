@@ -2,8 +2,6 @@
 import React from 'react';
 // importing motion
 import { motion } from 'framer-motion';
-// importing lazy-load
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // Making the function
 function HoverImages(props){

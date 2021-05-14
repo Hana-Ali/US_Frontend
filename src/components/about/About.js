@@ -67,7 +67,7 @@ const hoverItem = {
 // Making the function
 function About(props){
     
-    const {ref, inView} = useInView({ threshold: 0.7 });
+    const {ref, inView} = useInView({ threshold: 0.5 });
 
     useEffect(() => {
         console.log("use effect hook, inView = ", inView);
