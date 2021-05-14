@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 // Importing NavBar
 import NavBar from './components/navbar/NavBar';
 // Importing Hero
-import Hero from './components/firstLanding/Hero'
+import Hero from './components/firstLandingLazy/Hero'
 // Importing About
 import About from './components/about/About';
 // Importing Testimonials
@@ -12,7 +12,7 @@ import Testimonials from './components/testimonials/Testimonials';
 import locomotiveScroll from 'locomotive-scroll';
 // Importing the css
 import './App.css'
-import './components/firstLanding/Hero.css'
+import './components/firstLandingLazy/Hero.css'
 import './components/navbar/NavBar.css'
 import './components/about/About.css'
 import './components/testimonials/Testimonials.css'

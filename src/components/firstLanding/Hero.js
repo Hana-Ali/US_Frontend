@@ -15,7 +15,7 @@ import Cable from '../../assets/images/heroObjects2/cable.png';
 import Chicken from '../../assets/images/heroObjects2/chicken.png';
 import Cup1 from '../../assets/images/heroObjects2/cup1.png';
 import Cup2 from '../../assets/images/heroObjects2/cup2.png';
-import Cup3 from '../../assets/images/heroObjects2/cup3.png';
+import Cup3 from '../../assets/images/heroObjects2/cup2.png';
 import Desk from '../../assets/images/heroObjects2/desk.png';
 import DeskBack from '../../assets/images/heroObjects2/deskBack.png';
 import Figure from '../../assets/images/heroObjects2/figure.png';
@@ -36,35 +36,8 @@ import Tablet from '../../assets/images/heroObjects2/tablet.png';
 import TeddyBear from '../../assets/images/heroObjects2/teddyBear.png';
 import SufferingBackground from '../../assets/images/heroObjects2/sufferingBackground.png';
 import SufferingIcon from '../../assets/images/heroObjects2/sufferingIcon.png';
-// importing the blurry
-import BowlBlurry from '../../assets/images/heroObjectsBlurry/bowlBlurry.png';
-import BoxBlurry from '../../assets/images/heroObjectsBlurry/boxBlurry.png';
-import BunnyBlurry from '../../assets/images/heroObjectsBlurry/bunnyBlurry.png';
-import CableBlurry from '../../assets/images/heroObjectsBlurry/cableBlurry.png';
-import ChickenBlurry from '../../assets/images/heroObjectsBlurry/chickenBlurry.png';
-import Cup1Blurry from '../../assets/images/heroObjectsBlurry/cup1Blurry.png';
-import Cup2Blurry from '../../assets/images/heroObjectsBlurry/cup2Blurry.png';
-import Cup3Blurry from '../../assets/images/heroObjectsBlurry/cup3Blurry.png';
-import DeskBlurry from '../../assets/images/heroObjectsBlurry/deskBlurry.png';
-import DeskBackBlurry from '../../assets/images/heroObjectsBlurry/deskBackBlurry.png';
-import FigureBlurry from '../../assets/images/heroObjectsBlurry/figureBlurry.png';
-import GamesBlurry from '../../assets/images/heroObjectsBlurry/gamesBlurry.png';
-import HeadsetBlurry from '../../assets/images/heroObjectsBlurry/headsetBlurry.png';
-import KeyboardBlurry from '../../assets/images/heroObjectsBlurry/keyboardBlurry.png';
-import MonitorBlurry from '../../assets/images/heroObjectsBlurry/monitorBlurry.png';
-import NotesBlurry from '../../assets/images/heroObjectsBlurry/notesBlurry.png';
-import OctopusBlurry from '../../assets/images/heroObjectsBlurry/octopusBlurry.png';
-import PencilCaseBlurry from '../../assets/images/heroObjectsBlurry/pencilCaseBlurry.png';
-import PolaroidUpBlurry from '../../assets/images/heroObjectsBlurry/polaroidUpBlurry.png';
-import PostCard1Blurry from '../../assets/images/heroObjectsBlurry/postcard1Blurry.png';
-import PostCard2Blurry from '../../assets/images/heroObjectsBlurry/postcard2Blurry.png';
-import PostersBlurry from '../../assets/images/heroObjectsBlurry/postersBlurry.png';
-import RightBoxBlurry from '../../assets/images/heroObjectsBlurry/rightBoxBlurry.png';
-import ScreenBlurry from '../../assets/images/heroObjectsBlurry/screenBlurry.png';
-import TabletBlurry from '../../assets/images/heroObjectsBlurry/tabletBlurry.png';
-import TeddyBearBlurry from '../../assets/images/heroObjectsBlurry/teddyBearBlurry.png';
-import SufferingBackgroundBlurry from '../../assets/images/heroObjectsBlurry/sufferingBackgroundBlurry.png';
-import SufferingIconBlurry from '../../assets/images/heroObjectsBlurry/sufferingIconBlurry.png';
+import SufferingIconLeft from '../../assets/images/heroObjects2/sufferingIconLeft.png';
+
 
 // Main animation variant for the parent container
 const container = {
@@ -112,7 +85,7 @@ const hoverItem = {
 // Creating the function for the hero
 function Hero(props) {
 
-    const { ref, inView } = useInView({ threshold: 0.5 });
+    const { ref, inView } = useInView({ threshold: 0.1 });
 
     useEffect(() => {
         console.log("use effect hook, inView = ", inView);
@@ -128,48 +101,48 @@ function Hero(props) {
 
             <div className="allGroups">
             {/* First group staggered together; desk, and deskBack */}
-                <IndividualImage className="deskBack" placeHolder={DeskBackBlurry} imageVariant={item} imageSource={DeskBack} style={{ "z-index": "0" }}/>
-                <IndividualImage className="desk" placeHolder={DeskBlurry} imageVariant={item} imageSource={Desk} style={{ "z-index": "0" }}/>
+                <IndividualImage className="deskBack" imageVariant={item} imageSource={DeskBack} style={{ "z-index": "0" }}/>
+                <IndividualImage className="desk" imageVariant={item} imageSource={Desk} style={{ "z-index": "0" }}/>
             
             {/* Second group staggered together; notes, teddy, octopus, pencil case, pens, rightBox */}
-                <IndividualImage className="notes" placeHolder={NotesBlurry} imageVariant={item} imageSource={Notes} style={{ "z-index": "1" }} />
-                <IndividualImage className="teddyBear" placeHolder={TeddyBearBlurry} imageVariant={item} imageSource={TeddyBear} style={{ "z-index": "0" }} />
+                <IndividualImage className="notes" imageVariant={item} imageSource={Notes} style={{ "z-index": "1" }} />
+                <IndividualImage className="teddyBear" imageVariant={item} imageSource={TeddyBear} style={{ "z-index": "0" }} />
 
                 {/* HOVERABLE OCTOPUS */}
-                <IndividualImage className="octopus" placeHolder={OctopusBlurry} imageVariant={item} imageSource={Octopus} style={{ "z-index": "0" }} />
+                <IndividualImage className="octopus" imageVariant={item} imageSource={Octopus} style={{ "z-index": "0" }} />
 
-                <IndividualImage className="pencilCase" placeHolder={PencilCaseBlurry} imageVariant={item} imageSource={PencilCase} style={{ "z-index": "10" }} />
-                <IndividualImage className="chicken" placeHolder={ChickenBlurry} imageVariant={item} imageSource={Chicken} style={{ "z-index": "10" }}/>
-                <IndividualImage className="cup1" placeHolder={Cup1Blurry} imageVariant={item} imageSource={Cup1} style={{ "z-index": "1" }} />
-                <IndividualImage className="cup2" placeHolder={Cup2Blurry} imageVariant={item} imageSource={Cup2} style={{ "z-index": "1" }} />
-                <IndividualImage className="cup3" placeHolder={Cup3Blurry} imageVariant={item} imageSource={Cup3} style={{ "z-index": "1" }} />
+                <IndividualImage className="pencilCase" imageVariant={item} imageSource={PencilCase} style={{ "z-index": "10" }} />
+                <IndividualImage className="chicken" imageVariant={item} imageSource={Chicken} style={{ "z-index": "10" }}/>
+                <IndividualImage className="cup1" imageVariant={item} imageSource={Cup1} style={{ "z-index": "1" }} />
+                <IndividualImage className="cup2" imageVariant={item} imageSource={Cup2} style={{ "z-index": "1" }} />
+                <IndividualImage className="cup3" imageVariant={item} imageSource={Cup3} style={{ "z-index": "1" }} />
 
             {/* Third group staggered together; games, box (both), postcard1 and 2, bowl, statue, bunny */}
-                <IndividualImage className="games" placeHolder={GamesBlurry} imageVariant={item} imageSource={Games} style={{ "z-index": "2" }} />
-                <IndividualImage className="box" placeHolder={BoxBlurry} imageVariant={item} imageSource={Box} style={{ "z-index": "1" }} />
-                <IndividualImage className="postcard1" placeHolder={PostCard1Blurry} imageVariant={item} imageSource={Postcard1} style={{ "z-index": "-1" }} />
-                <IndividualImage className="bowl" placeHolder={BowlBlurry} imageVariant={item} imageSource={Bowl} style={{ "z-index": "3" }} />
-                <IndividualImage className="postcard2" placeHolder={PostCard2Blurry} imageVariant={item} imageSource={Postcard2} style={{ "z-index": "-1" }} />
-                <IndividualImage className="figure" placeHolder={FigureBlurry}imageVariant={item} imageSource={Figure} style={{ "z-index": "0" }} />
-                <IndividualImage className="bunny" placeHolder={BunnyBlurry} imageVariant={item} imageSource={Bunny} style={{ "z-index": "0" }} />
-                <IndividualImage className="rightBox" placeHolder={RightBoxBlurry} imageVariant={item} imageSource={RightBox} style={{ "z-index": "0" }} />
+                <IndividualImage className="games" imageVariant={item} imageSource={Games} style={{ "z-index": "2" }} />
+                <IndividualImage className="box" imageVariant={item} imageSource={Box} style={{ "z-index": "1" }} />
+                <IndividualImage className="postcard1" imageVariant={item} imageSource={Postcard1} style={{ "z-index": "-1" }} />
+                <IndividualImage className="bowl" imageVariant={item} imageSource={Bowl} style={{ "z-index": "3" }} />
+                <IndividualImage className="postcard2" imageVariant={item} imageSource={Postcard2} style={{ "z-index": "-1" }} />
+                <IndividualImage className="figure" imageVariant={item} imageSource={Figure} style={{ "z-index": "0" }} />
+                <IndividualImage className="bunny" imageVariant={item} imageSource={Bunny} style={{ "z-index": "0" }} />
+                <IndividualImage className="rightBox" imageVariant={item} imageSource={RightBox} style={{ "z-index": "0" }} />
 
             {/* Fourth group staggered together; posters, headset, keyboard, polaroidUp */}
-                <IndividualImage className="posters" placeHolder={PostersBlurry} imageVariant={item} imageSource={Posters} style={{ "z-index": "-1" }} />
-                <IndividualImage className="headset" placeHolder={HeadsetBlurry} imageVariant={item} imageSource={Headset} style={{ "z-index": "1" }} />
-                <IndividualImage className="keyboard" placeHolder={KeyboardBlurry} imageVariant={item} imageSource={Keyboard} style={{ "z-index": "0" }} />
-                <IndividualImage className="polaroidUp" placeHolder={PolaroidUpBlurry} imageVariant={item} imageSource={PolaroidUp} style={{ "z-index": "-1" }} />
+                <IndividualImage className="posters" imageVariant={item} imageSource={Posters} style={{ "z-index": "-1" }} />
+                <IndividualImage className="headset" imageVariant={item} imageSource={Headset} style={{ "z-index": "1" }} />
+                <IndividualImage className="keyboard" imageVariant={item} imageSource={Keyboard} style={{ "z-index": "0" }} />
+                <IndividualImage className="polaroidUp" imageVariant={item} imageSource={PolaroidUp} style={{ "z-index": "-1" }} />
 
             {/* Fifth group staggered together; cable, tablet, monitor */}
-                <IndividualImage className="cable" placeHolder={CableBlurry} imageVariant={item} imageSource={Cable} style={{ "z-index": "-1" }} />
-                <IndividualImage className="tablet" placeHolder={TabletBlurry} imageVariant={item} imageSource={Tablet} style={{ "z-index": "0" }} />
-                <IndividualImage className="monitor" placeHolder={MonitorBlurry} imageVariant={item} imageSource={Monitor} style={{ "z-index": "0" }} />
+                <IndividualImage className="cable" imageVariant={item} imageSource={Cable} style={{ "z-index": "-1" }} />
+                <IndividualImage className="tablet" imageVariant={item} imageSource={Tablet} style={{ "z-index": "0" }} />
+                <IndividualImage className="monitor" imageVariant={item} imageSource={Monitor} style={{ "z-index": "0" }} />
 
             {/* Screen special */}
-                <IndividualImage className="screen" placeHolder={ScreenBlurry} imageVariant={item} imageSource={Screen} style={{ "z-index": "0" }} />
-                <IndividualImage className="windowsXP" placeHolder={SufferingBackgroundBlurry} imageVariant={item} imageSource={SufferingBackground} style={{ "z-index" : "20" }} />
+                <IndividualImage className="screen" imageVariant={item} imageSource={Screen} style={{ "z-index": "0" }} />
+                <IndividualImage className="windowsXP" imageVariant={item} imageSource={SufferingBackground} style={{ "z-index" : "20" }} />
                 <a href="#">
-                    <HoverImages className="sufferingIcon" placeHolder={SufferingIconBlurry} imageVariant={hoverItem} imageSource={SufferingIcon} style={{ "z-index": "21" }} />
+                    <HoverImages className="sufferingIcon" imageVariant={hoverItem} imageSource={SufferingIcon} style={{ "z-index": "21" }} />
                 </a>
 
             </div>

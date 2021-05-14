@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react';
 // importing motion
 import { motion, useAnimation } from 'framer-motion';
-import IndividualImage from '../firstLanding/IndividualImage';
-import HoverImage from '../firstLanding/HoverImages'
+import IndividualImage from '../firstLandingLazy/IndividualImage';
+import HoverImage from '../firstLandingLazy/HoverImages'
 // importing hook to know when in frame
 import { useInView } from 'react-intersection-observer';
 // importing the images
