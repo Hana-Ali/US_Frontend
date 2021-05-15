@@ -4,7 +4,6 @@ import { Route } from 'react-router-dom';
 import NavBar from './components/mainPage/LandingItems/navbar/NavBar';
 import Footer from './components/mainPage/LandingItems/footer/Footer'
 import { motion } from 'framer-motion';
-import { Layout } from '@styled-icons/boxicons-regular';
 
 // Making the function to essentially show the navbar and footer on every page
 function LayoutRoute(props){

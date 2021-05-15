@@ -4,6 +4,9 @@ import React from 'react';
 import HomePage from './components/mainPage/HomePage';
 // Importing LayoutRoute
 import LayoutRoute from './LayoutRoute';
+import LayoutRoute2 from './LayoutRoute2';
+// Importing Registration page
+import LoginPage from './components/registration/LoginPage';
 // Importing css
 import './App.css'
 // Importing the react-router things needed
@@ -16,6 +19,7 @@ function App() {
     <Router>
       <Switch>
         <LayoutRoute path="/" exact={true} component={HomePage} />
+        <LayoutRoute2 path="/login" exact={true} component={LoginPage} />
       </Switch>
     </Router>
 
