@@ -1,8 +1,8 @@
 // Importing necessary modules
 import React from 'react';
 import { Route } from 'react-router-dom';
-import NavBar from './components/navbar/NavBar';
-import Footer from './components/footer/Footer'
+import NavBar from './components/mainPage/LandingItems/navbar/NavBar';
+import Footer from './components/mainPage/LandingItems/footer/Footer'
 import { motion } from 'framer-motion';
 import { Layout } from '@styled-icons/boxicons-regular';
 

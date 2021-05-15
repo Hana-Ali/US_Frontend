@@ -1,23 +1,23 @@
 // Importing NavBar
-import NavBar from '../navbar/NavBar';
+import NavBar from './LandingItems/navbar/NavBar';
 // Importing Hero
-import Hero from '../firstLandingLazy/Hero'
+import Hero from './LandingItems/firstLandingLazy/Hero'
 // Importing About
-import About from '../about/About';
+import About from './LandingItems/about/About';
 // Importing Testimonials
-import Testimonials from '../testimonials/Testimonials';
+import Testimonials from './LandingItems/testimonials/Testimonials';
 // Importing SignUp 
-import SignUp from '../signUp/SignUp';
+import SignUp from './LandingItems/signUp/SignUp';
 // Importing Footer 
-import Footer from '../footer/Footer';
+import Footer from './LandingItems/footer/Footer';
 // Importing the css
-import '../firstLandingLazy/Hero.css'
-import '../navbar/NavBar.css'
-import '../about/About.css'
-import '../testimonials/Testimonials.css'
-import '../testimonials/Cards.css'
-import '../signUp/SignUp.css'
-import '../footer/Footer.css'
+import './LandingItems/firstLandingLazy/Hero.css'
+import './LandingItems/navbar/NavBar.css'
+import './LandingItems/about/About.css'
+import './LandingItems/testimonials/Testimonials.css'
+import './LandingItems/testimonials/Cards.css'
+import './LandingItems/signUp/SignUp.css'
+import './LandingItems/footer/Footer.css'
 // Importing motion
 import { motion } from 'framer-motion'
 // Importing styles

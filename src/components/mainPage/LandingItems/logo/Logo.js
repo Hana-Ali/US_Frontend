@@ -3,7 +3,7 @@ import React from 'react';
 // Importing styled components
 import styled from "styled-components";
 // Importing the image
-import USLogo from "../../assets/images/bunny.png"
+import USLogo from "../../../../assets/images/bunny.png"
 
 // Styling the wrapper for the logo
 const LogoWrapper = styled.div`

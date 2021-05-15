@@ -7,10 +7,10 @@ import HoverImage from '../firstLandingLazy/HoverImages'
 // importing hook to know when in frame
 import { useInView } from 'react-intersection-observer';
 // importing the images
-import Tablet from '../../assets/images/aboutImagesResized/tablet.png';
-import TabletPen from '../../assets/images/aboutImagesResized/tabletPen.png';
-import BackgroundPaper from '../../assets/images/aboutImagesResized/backgroundPaper.png';
-import FrontPaper from '../../assets/images/aboutImagesResized/frontPaper.png';
+import Tablet from '../../../../assets/images/aboutImagesResized/tablet.png';
+import TabletPen from '../../../../assets/images/aboutImagesResized/tabletPen.png';
+import BackgroundPaper from '../../../../assets/images/aboutImagesResized/backgroundPaper.png';
+import FrontPaper from '../../../../assets/images/aboutImagesResized/frontPaper.png';
 
 // Just for the initial
 const initialContainer = {

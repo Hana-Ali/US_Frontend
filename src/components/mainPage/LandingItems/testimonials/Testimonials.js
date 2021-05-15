@@ -7,8 +7,8 @@ import { useInView } from 'react-intersection-observer';
 // importing the cards
 import Cards from './Cards';
 // importing images
-import Octopus from '../../assets/images/testimonialImages/octopus.png';
-import TeddyBear from '../../assets/images/testimonialImages/teddyBear.png';
+import Octopus from '../../../../assets/images/testimonialImages/octopus.png';
+import TeddyBear from '../../../../assets/images/testimonialImages/teddyBear.png';
 
 // Just for the initial
 const initialContainer = {
