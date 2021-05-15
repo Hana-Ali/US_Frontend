@@ -49,16 +49,11 @@ const SearchIcon = styled(Search)`
 // Creating the search bar
 // -------------------------- TOGGLE NOT WORKING
 function SearchBar(props) {
-    const [isActive, setActive] = useState(false);
-
-    const toggleClass = () => {
-        setActive(!isActive);
-    };
 
     return(
         <SearchBarContainer>
-            <SearchBarInput className={isActive ? 'active1' : null} />
-            <SearchIconContainer className={isActive ? 'active1' : null} onClick={toggleClass} >
+            <SearchBarInput  />
+            <SearchIconContainer  >
                 <a href="#"><SearchIcon /></a>
             </SearchIconContainer>
         </SearchBarContainer>
