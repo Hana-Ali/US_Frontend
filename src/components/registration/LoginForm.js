@@ -1,10 +1,19 @@
 // Importing react
 import React from 'react';
 // Importing the commons
-import { MinorBoxContainer, FormContainer, Input, MutedLink, BoldLink, SubmitButton } from './CommonItems';
+import { MinorBoxContainer, FormContainer, Input, MutedLink, SubmitButton } from './CommonItems';
+// Importing link
+import { Link } from 'react-router-dom';
 
 function LoginForm(props)
 {
+    const BoldLink = {
+        fontSize: "12px",
+        color: "rgb(241, 196, 15)",
+        fontWeight: "500",
+        textDecoration: "none"
+    };
+
     return(
         <MinorBoxContainer>
             <FormContainer>
@@ -16,8 +25,9 @@ function LoginForm(props)
 
             <MutedLink href="#">Forgot your password?</MutedLink>
             <SubmitButton type="submit">Login</SubmitButton>
+            
             <MutedLink href="#">
-                Don't have an account? <BoldLink href="#">Signup</BoldLink>
+                Don't have an account? <Link to='/register' style={BoldLink}>Signup</Link>
             </MutedLink>
 
         </MinorBoxContainer>

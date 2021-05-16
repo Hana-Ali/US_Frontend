@@ -33,10 +33,35 @@ export const BoldLink = styled.a`
     text-decoration: none;
 `;
 
-// Input
+// Input Login
 export const Input = styled.input`
     outline: none;
     height: 42px;
+    width: 100%;
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    padding: 0px 10px;
+    border-bottom: 1.4px solid transparent;
+
+    transition: all 200ms ease-in-out;
+
+    &::placeholder {
+        color: rgba(200, 200, 200, 1);
+    }
+
+    &:not(:last-of-type){
+        border-bottom: 1.5px solid rgba(200, 200, 200, 0.4);
+    }
+
+    &:focus {
+        outline: none;
+        border-bottom: 2px solid rgb(241, 196, 15);
+    }
+`;
+
+// Input Signup
+export const SignupInput = styled.input`
+    outline: none;
+    height: 60px;
     width: 100%;
     border: 1px solid rgba(200, 200, 200, 0.3);
     padding: 0px 10px;
@@ -63,7 +88,7 @@ export const SubmitButton = styled.button`
     width: 100%;
     padding: 11px 40%;
     color: #fff;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
     border: none;
     border-radius: 100px 100px 100px 100px;

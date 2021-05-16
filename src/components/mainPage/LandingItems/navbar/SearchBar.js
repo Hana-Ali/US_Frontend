@@ -1,15 +1,18 @@
 // Import react
-import React, { useState } from 'react';
+import React from 'react';
 // Import the styling
 import styled from 'styled-components';
 // Importing the search icon
 import { Search } from '@styled-icons/heroicons-outline/Search'
+// importing the account icon
+import { UserAccount } from '@styled-icons/boxicons-solid/UserAccount';
 
 // Styling the entire search bar container
 const SearchBarContainer = styled.div`
     display: flex;
     position: relative;
     background-color: transparent;
+    left: -50px;
 `;
 
 // Styling the input text field
@@ -19,7 +22,7 @@ const SearchBarInput = styled.input`
     border-radius: 3px;
     border: 2px solid black;
     position: relative;
-    width: 250px;
+    width: 200px;
     padding: 0 10px;
     background-color: transparent;
 `;
@@ -46,6 +49,17 @@ const SearchIcon = styled(Search)`
     background: black;
 `;
 
+const AccountIcon = styled(UserAccount)`
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    left: 50%;
+    color: black;
+    transform: translate(110%, -50%);
+    cursor: pointer;
+`;
+
 // Creating the search bar
 // -------------------------- TOGGLE NOT WORKING
 function SearchBar(props) {
@@ -54,7 +68,8 @@ function SearchBar(props) {
         <SearchBarContainer>
             <SearchBarInput  />
             <SearchIconContainer  >
-                <a href="#"><SearchIcon /></a>
+                <span><a href="#"><SearchIcon /></a></span>
+                <span><a href="#"><AccountIcon /></a></span>
             </SearchIconContainer>
         </SearchBarContainer>
     );

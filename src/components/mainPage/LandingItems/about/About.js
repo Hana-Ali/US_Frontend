@@ -73,7 +73,7 @@ function About(props){
         console.log("use effect hook, inView = ", inView);
     }, [inView])
 
-    return(
+    return (
         // Div that holds everything, shows only if in view
         <motion.div className="bigBoy"
             variants={initialContainer}

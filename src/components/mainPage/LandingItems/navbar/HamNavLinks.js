@@ -33,38 +33,6 @@ const LinksMenuSmall = styled.ul`
     left: 0;
 `;
 
-// Styling the li's
-/*const LinksItemSmall = styled.li`
-    display: flex;
-    width: 100%;
-    padding: 0 1.1em;
-    margin-bottom: 10px;
-    margin: 2rem;
-`;
-
-// Styling each individual link
-const LinkSmall = styled.a`
-    text-decoration: none;
-    color: black;
-    font-size: 1.6rem;
-    font-weight: bold;
-
-    &:hover{
-        color: rgb(24, 23, 23);
-    }
-`;
-
-// Variants for staggering
-const variants = {
-    // Transition for when opening and closing, stagger and delay children for animation
-    open: {
-        transition: { staggerChildren: 0.07, delayChildren: 0.2 }
-    },
-    closed: {
-        transition: { staggerChildren: 0.05, staggerDirection: -1 }
-    }
-};*/
-
 // Making the actual function of the smaller nav
 function HamNavLinks(props) {
     // Setting the states

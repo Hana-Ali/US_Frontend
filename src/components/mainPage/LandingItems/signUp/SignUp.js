@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 // Importing the ball
 import BallBounce from './BallBounce';
+// Importing link from router dom
+import { Link } from 'react-router-dom';
 
 // Just for the initial
 const initialContainer = {
@@ -38,7 +40,7 @@ function SignUp(props)
                         </motion.h2>
                     </div>
                     <div className="button">
-                        <button class="signButton">LET'S A GO!</button>
+                        <Link to='/register'><button class="signButton">LET'S A GO!</button></Link>
                     </div>
                 </div>
                 <div class="col-sm-4">

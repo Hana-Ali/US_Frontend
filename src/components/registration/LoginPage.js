@@ -6,8 +6,6 @@ import styled from 'styled-components';
 import LoginForm from './LoginForm';
 // Importing motion
 import { motion } from 'framer-motion';
-// importing to know when in frame
-import { useInView } from 'react-intersection-observer';
 
 // Container for the box
 const FullContainer = styled(motion.div)`
@@ -144,19 +142,12 @@ function AccountBox(props)
             setExpanded(false);
         }, expandingTransition.duration * 1000 - 1500);
     }
-    
-    const { ref, inView } = useInView({ threshold: 0.3 });
-
-    useEffect(() => {
-        console.log("use effect hook, inView = ", inView);
-    }, [inView])
 
     return(
         <FullContainer
         variants={initialContainer}
         initial="hidden"
-        animate={inView ? "show" : "hidden"}
-        ref={ref}
+        animate="show"
         >
             <BoxContainer>
 

@@ -9,7 +9,7 @@ import Logo from "../logo/Logo";
 // Importing the links
 import NavLinks from "./NavLinks.js";
 // Importing the search bar
-import SearchBar from './SearchBar.js'
+import SearchBar from './SearchBar.js';
 // Importing the sizes
 import { DeviceSize } from '../responsive/DeviceSize';
 // Importing the smaller navigation links
