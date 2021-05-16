@@ -22,7 +22,11 @@ import Img10 from '../../assets/images/userGalleryImages/img10.jpg';
 import Img11 from '../../assets/images/userGalleryImages/img11.jpg';
 import Img12 from '../../assets/images/userGalleryImages/img12.jpg';
 // importing the css
-import './UserGallery.css';
+import './UserGallery2.css';
+// importing Link
+import { Link } from 'react-router-dom';
+// importing the icons
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const ProfileMainContent = styled.div`
     width: 80%;
@@ -32,8 +36,24 @@ const ProfileMainContent = styled.div`
     display: grid;
 `;
 
-function UserGallery(props)
-{
+const StyledLinkUser = styled(Link)`
+    color: #000;
+    text-decoration: none;
+    font-size: 1.05vh;
+    font-weight: 500;
+    text-transform: uppercase;
+`;
+
+const StyledLinkUserIcon = styled(Link)`
+    color: #000;
+    font-size: 1.05vh;
+
+    &:not(:last-child) {
+        margin-right: 1.05vh;
+    }
+`;
+
+function UserGallery(props) {
     let imageData = [
         {
             id: 1,
@@ -134,27 +154,39 @@ function UserGallery(props)
     ]
 
     const [model, setModel] = useState(false);
-    const[tempImgSrc, setTempImgSrc] = useState('');
+    const [tempImgSrc, setTempImgSrc] = useState('');
 
     const getImg = (imgSrc) => {
         setTempImgSrc(imgSrc);
         setModel(true);
     }
 
-    return(
+    return (
         <ProfileMainContent>
-            
+
             <div className={model ? "model open" : "model"}>
                 <img src={tempImgSrc} />
-                <CloseIcon onClick={() => setModel(false)}/>
+                <CloseIcon onClick={() => setModel(false)} />
             </div>
 
             <div className="gallery">
 
-                {imageData.map((item, index) =>{
-                    return(
-                        <div className="pics" key={index} onClick={() =>getImg(item.imgSrc)}>
-                            <img src={item.imgSrc} style={{width: '100%'}}/>
+                {imageData.map((item, index) => {
+                    return (
+                        <div className="pics" key={index} onClick={() => getImg(item.imgSrc)}>
+                            <img src={item.imgSrc} style={{ width: '100%' }} />
+                            <div class="details">
+                                <h2>The <span>Title</span></h2>
+                                <p>Hey this is not my art don't kill me</p>
+                                <div className="moreDetails">
+                                    <StyledLinkUser to='/product/id'>Read<span className="linkUserSpan">More</span></StyledLinkUser>
+                                    <div class="iconLinks">
+                                        <StyledLinkUserIcon to='/'><span className="fas fa-heart" /></StyledLinkUserIcon>
+                                        <StyledLinkUserIcon to='/'><span className="fas fa-eye" /></StyledLinkUserIcon>
+                                        <StyledLinkUserIcon to='/'><span className="fas fa-share" /></StyledLinkUserIcon>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     )
                 })}

@@ -2,12 +2,13 @@
 import React from 'react';
 // importing motion
 import { motion } from 'framer-motion';
-// importing user products container
-import UserGallery from './UserGallery';
+// importing user products gallery
+import UserGallery2 from './UserGallery2';
 // importing styled
 import styled from 'styled-components';
-// importing bunny
-import Bunny from './bunny.png';
+// importing pics
+import ProfilePic from '../../assets/images/userGalleryImages/crisalysSmaller.png';
+import Background from '../../assets/images/userGalleryImages/background.jpg';
 
 const ProfileSideBar = styled.div`
     width: 20%;
@@ -16,6 +17,14 @@ const ProfileSideBar = styled.div`
     background-color: black;
     position: fixed;
     border-right: 2px solid #fff;
+`;
+
+const ProfileSideBarImage = styled.img`
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
 `;
 
 const ProfilePictureWrapper = styled.div`
@@ -39,8 +48,8 @@ const ProfilePictureWrapper = styled.div`
 const ProfilePictureImage = styled.img`
     position: absolute;
     clip-path: circle()
-    height: 80%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
     z-index: 100;
 `;
 
@@ -49,14 +58,14 @@ function Profile(props)
     return (
         <div>
             <ProfileSideBar>
-
+                <ProfileSideBarImage src={Background} />
                 <ProfilePictureWrapper>
-                    <ProfilePictureImage src={Bunny}/>
+                    <ProfilePictureImage src={ProfilePic}/>
                 </ProfilePictureWrapper>
 
             </ProfileSideBar>
 
-            <UserGallery />
+            <UserGallery2 />
 
         </div>
     );
