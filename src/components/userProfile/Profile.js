@@ -3,7 +3,7 @@ import React from 'react';
 // importing motion
 import { motion } from 'framer-motion';
 // importing user products gallery
-import UserGallery2 from './UserGallery2';
+import UserGallery from './UserGallery';
 // importing styled
 import styled from 'styled-components';
 // importing pics
@@ -43,6 +43,7 @@ const ProfilePictureWrapper = styled.div`
     height: 150px;
     top: 43%;
     left: 81%;
+    z-index: 100;
 `;
 
 const ProfilePictureImage = styled.img`
@@ -65,7 +66,7 @@ function Profile(props)
 
             </ProfileSideBar>
 
-            <UserGallery2 />
+            <UserGallery />
 
         </div>
     );

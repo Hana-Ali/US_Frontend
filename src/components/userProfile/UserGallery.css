@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
 .gallery {
     -webkit-column-count: 3;
     -moz-column-count: 3;
@@ -11,18 +13,91 @@
     align-items: center;
     margin: 6% 20%;
 
+    font-family: "Raleway", sans-serif;
     padding: 0 12px;
 }
 
 .pics {
-    -webkit-transition: all 350ms;
-    transition: all 350 ms;
+    position: relative;
     cursor: pointer;
     margin-bottom: 12px;
+    overflow: hidden;
 }
 
-.pics:hover{
-    filter: opacity(0.8);
+.pics img {
+    opacity: 0.8;
+    position: relative;
+    vertical-align: top;
+    transition: 0.6s;
+    transition-property: opacity;
+}
+
+.pics:hover img{
+    opacity: 1;
+}
+
+.pics .details {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.pics .details h2 {
+    text-align: center;
+    font-size: 2vw;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 5vw;
+    transition: 0.4s;
+    transition-property: transform;
+}
+
+.pics .details h2 span{
+    font-weight: 900;
+}
+
+.pics:hover .details h2{
+    transform: translateY(-30px);
+}
+
+.pics .details p {
+    margin: 1vw 1vw 0 1vw;
+    font-size: 1.2vw;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transition: 0.6s;
+    transition-property: opacity, transform;
+}
+
+.pics:hover .details p{
+    opacity: 1;
+    transform: translateY(-40px);
+}
+
+.moreDetails{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh;
+    bottom: -50vh;
+    transition: 0.6s;
+    transition-property: bottom;
+}
+
+.pics:hover .moreDetails{
+    bottom: 0;
+}
+
+.linkUserSpan {
+    font-weight: 900;
 }
 
 @media (max-width: 1110px){
