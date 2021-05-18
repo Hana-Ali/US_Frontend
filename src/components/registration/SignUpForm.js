@@ -5,7 +5,7 @@ import { MinorBoxContainer, FormContainer, SignupInput, MutedLink, SubmitButton 
 // Importing link
 import { Link } from 'react-router-dom';
 
-function SignUpForm(props) {
+function SignupForm(props) {
     
     // "initial", "sending", "successful", "unsuccessful", "validation error"
     const [state, setState] = useState("initial");
@@ -146,4 +146,4 @@ function SignUpForm(props) {
     )
 }
 
-export default SignUpForm;
+export default SignupForm;
