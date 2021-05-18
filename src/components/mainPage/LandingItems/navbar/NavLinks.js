@@ -4,6 +4,8 @@ import React from 'react';
 import styled from 'styled-components';
 // Importing links
 import navbarLinks from './MenuItems';
+// importing link from router-dom
+import { Link } from 'react-router-dom';
 
 // Styling the container for the links
 const LinksContainer = styled.div`
@@ -35,7 +37,7 @@ const LinksItem = styled.li`
 `;
 
 // Styling each link 
-const Link = styled.a`
+const MyLink = styled(Link)`
     text-decoration: none;
     color: black;
     font-size: 1.3rem;
@@ -78,7 +80,7 @@ function NavLinks(props) {
                     navbarLinks.map(
                         (label) => {
                             return(
-                                <LinksItem><Link href={label.path}>{label.title}</Link></LinksItem>
+                                <LinksItem><MyLink to={`${label.path}`}>{label.title}</MyLink></LinksItem>
                             )
                         }
                     )

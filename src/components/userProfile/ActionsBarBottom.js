@@ -76,7 +76,7 @@ function ActionsBarBottom(props)
                 <StyledLink to='/user' ><span className="fas fa-user" /></StyledLink>
             </button>
             <button>
-                <StyledLink to='/products' ><span className="fas fa-store" /></StyledLink>
+                <StyledLink to='/art-gallery' ><span className="fas fa-store" /></StyledLink>
             </button>
 
 

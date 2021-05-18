@@ -4,14 +4,13 @@ import Card from './ChallengeItems/Card';
 function ChallengePage(){
     return(
     
-    <div>
+    <div className="expanded-div">
 
         <div 
         id="card-section"
-        className="d-flex my-4 justify-content-between"
-        style={{minHeight: 'calc(100vh - 462px)'}}>
+        className="d-flex my-4 justify-content-between">
 
-        <div class="container">
+        <div class="container meow">
           <div class="row">
             <div class="col">
               <Card 

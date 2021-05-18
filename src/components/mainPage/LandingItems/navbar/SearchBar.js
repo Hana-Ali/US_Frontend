@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import { Search } from '@styled-icons/heroicons-outline/Search'
 // importing the account icon
 import { UserAccount } from '@styled-icons/boxicons-solid/UserAccount';
+// importing link from router-dom
+import { Link } from 'react-router-dom';
 
 // Styling the entire search bar container
 const SearchBarContainer = styled.div`
@@ -68,8 +70,8 @@ function SearchBar(props) {
         <SearchBarContainer>
             <SearchBarInput  />
             <SearchIconContainer  >
-                <span><a href="#"><SearchIcon /></a></span>
-                <span><a href="#"><AccountIcon /></a></span>
+                <span><Link to="#"><SearchIcon /></Link></span>
+                <span><Link to='/user'><AccountIcon /></Link></span>
             </SearchIconContainer>
         </SearchBarContainer>
     );
