@@ -44,11 +44,14 @@ function SignupForm(props) {
         // 1.1 If there are errors, set the state to "validation error"
         if(errors.length > 0){
             setState("validation error");
+            // Populate the alert box with the errors
+            setErrorsState(errors);
         }
 
         // 1.2 If there are no errors, set the state to "sending"
         else{
             setState("sending");
+            setErrorsState([]);
 
             formData.append('userName', usernameField);
             formData.append('password', passwordField);
