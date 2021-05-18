@@ -9,6 +9,7 @@ function SignupForm(props) {
     
     // "initial", "sending", "successful", "unsuccessful", "validation error"
     const [state, setState] = useState("initial");
+    const [errorsState, setErrorsState] = useState([]);
 
     // Declare undefined variables for later assignment (ref props)
     let usernameField;
@@ -30,7 +31,7 @@ function SignupForm(props) {
         if (usernameField.value.length == 0) {
             errors.push("Please enter your first name");
         }
-        if (password.value.length == 0) {
+        if (passwordField.value.length == 0) {
             errors.push("Please enter your last name");
         }
         if (emailField.value.length == 0) {
