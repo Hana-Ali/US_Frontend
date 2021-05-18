@@ -11,6 +11,8 @@ import LoginPage from './components/registration/LoginPage';
 import SignupPage from './components/registration/SignupPage';
 // Importing User Profile
 import Profile from './components/userProfile/Profile';
+// Importing Challenges
+import ChallengePage from './components/challenges/ChallengePage';
 // Importing css
 import './App.css'
 // Importing the react-router things needed
@@ -26,6 +28,7 @@ function App() {
         <LayoutRoute2 path="/login" exact={true} component={LoginPage} />
         <LayoutRoute2 path="/register" exact={true} component={SignupPage} />
         <LayoutRoute2 path="/user" exact={true} component={Profile} />
+        <LayoutRoute path='/challenges' exact={true} component={ChallengePage} />
       </Switch>
     </Router>
 
