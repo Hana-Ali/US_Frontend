@@ -30,7 +30,7 @@ import { Link } from 'react-router-dom';
 // importing the icons
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-const ProfileMainContent = styled.div`
+const ProfileMainContent = styled(motion.div)`
     width: 80%;
     margin-left: 16%;
     background-color: #fff;
@@ -54,6 +54,15 @@ const StyledLinkUserIcon = styled(Link)`
         margin-right: 1.05vh;
     }
 `;
+
+// Just for the initial
+const initialContainer = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1,
+        transition: {
+            delay: 2.3
+        } }
+};
 
 function UserGallery(props) {
     let imageData = [
@@ -164,14 +173,18 @@ function UserGallery(props) {
     }
 
     return (
-        <ProfileMainContent>
+        <ProfileMainContent
+        >
 
             <div className={model ? "model open" : "model"}>
                 <img src={tempImgSrc} />
                 <CloseIcon onClick={() => setModel(false)} />
             </div>
 
-            <div className="gallery">
+            <motion.div className="gallery"
+                variants={initialContainer}
+                initial="hidden"
+                animate="show">
 
                 {imageData.map((item, index) => {
                     return (
@@ -193,7 +206,7 @@ function UserGallery(props) {
                     )
                 })}
 
-            </div>
+            </motion.div>
 
             <ActionsBarBottom />
 
