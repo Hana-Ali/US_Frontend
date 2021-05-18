@@ -84,13 +84,13 @@ function SignupForm(props) {
             setState("sending");
             setErrorsState([]);
 
-            formData.append('userName', usernameField);
-            formData.append('password', passwordField);
-            formData.append('firstName', firstNameField);
-            formData.append('lastName', lastNameField);
-            formData.append('email', emailField);
-            formData.append('phoneNumber', phoneNumberField);
-            formData.append('address', addressField);
+            formData.append('userName', usernameField.value);
+            formData.append('password', passwordField.value);
+            formData.append('firstName', firstNameField.value);
+            formData.append('lastName', lastNameField.value);
+            formData.append('email', emailField.value);
+            formData.append('phoneNumber', phoneNumberField.value);
+            formData.append('address', addressField.value);
 
             fetch(`${process.env.REACT_APP_API_ENDPOINT}/user/add`, {
                 method: `POST`,
