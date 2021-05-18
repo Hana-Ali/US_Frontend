@@ -28,6 +28,7 @@ function SignupForm(props) {
     const [errorsState, setErrorsState] = useState([]);
 
     // Declare undefined variables for later assignment (ref props)
+    let avatarField;
     let usernameField;
     let passwordField;
     let firstNameField;
@@ -38,6 +39,20 @@ function SignupForm(props) {
 
     // To instantiate a FormData object
     const formData = new FormData();
+
+    // Function for attaching files for the avatar of the user
+    const attachFile = (evt) => {
+
+        // Create an array for the files attached
+        const files = Array.from(evt.target.files);
+
+        // Append each file to the formData
+        files.forEach(
+            (file, index) => {
+                formData.append(index, file);
+            }
+        )
+    }
 
     const register = () => {
 
@@ -110,6 +125,9 @@ function SignupForm(props) {
             
             <FormContainer>
 
+                <SignupInput 
+                onChange={attachFile}
+                ref={(elem) => avatarField = elem} type="file" placeholder="Please choose an avatar" />
                 <SignupInput ref={(elem) => usernameField = elem} type="text" placeholder="Most Powerful Alias (username)" />
                 <SignupInput ref={(elem) => passwordField = elem} type="password" placeholder="Password" />
                 <SignupInput ref={(elem) => firstNameField = elem} type="text" placeholder="First Name" />
