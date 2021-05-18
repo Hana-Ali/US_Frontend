@@ -3,7 +3,7 @@ import React from 'react';
 // Importing the styles
 import styled from 'styled-components';
 // Importing the SignupForm
-import SignupForm from './SignupForm';
+import SignupForm from './SignupForm.js';
 // Importing motion
 import { motion } from 'framer-motion';
 
