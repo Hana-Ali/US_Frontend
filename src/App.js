@@ -11,6 +11,8 @@ import LoginPage from './components/registration/LoginPage';
 import SignupPage from './components/registration/SignupPage';
 // Importing User Profile
 import Profile from './components/userProfile/Profile';
+// Importing User Update 
+import ProfileUpdate from './components/profileUpdate/ProfileUpdate';
 // Importing css
 import './App.css'
 // Importing the react-router things needed
@@ -42,6 +44,7 @@ function App() {
         <LayoutRoute path="/product-4" exact = {true} component ={Product4} />
         <LayoutRoute path="/product-5" exact = {true} component ={Product5} />
         <LayoutRoute path="/challenges" exact = {true} component ={Challenges} />
+        <LayoutRoute2 path="/update" exact={true} component={ProfileUpdate} />
       </Switch>
     </Router>
 

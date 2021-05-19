@@ -97,31 +97,6 @@ const InnerContainer = styled.div`
     padding: 0 1.8rem;
 `;
 
-// Variants for the different styles for when we switch between different states
-const backdropVariants = {
-    // For the expanded state, when we're switching
-    expanded: {
-        width: "233%",
-        height: "1050px",
-        borderRadius: "20%",
-        transform: "rotate(60deg)"
-    },
-    // For the normal collapsed state
-    collapsed: {
-        width: "160%",
-        height: "550px",
-        borderRadius: "50%",
-        transform: "rotate(60deg)"
-    }
-};
-
-// Transition when expanding, changing it to modify the framer-motion settings
-const expandingTransition = {
-    type: "spring",
-    duration: 2.3,
-    stiffness: 30
-};
-
 // Just for the initial
 const initialContainer = {
     hidden: { opacity: 0 },
@@ -130,19 +105,6 @@ const initialContainer = {
 
 function AccountBox(props)
 {
-    // States for expanded or collapsed backdrop
-    const [isExpanded, setExpanded] = useState(false);
-
-    // Toggle between states, or animations. Trigger this when login successful
-    const playExpandingAnimation = () => {
-        // Initially, expand down when link clicked
-        setExpanded(true);
-        // Play until a certain timeout
-        setTimeout(() => {
-            setExpanded(false);
-        }, expandingTransition.duration * 1000 - 1500);
-    }
-
     return(
         <FullContainer
         variants={initialContainer}
@@ -152,11 +114,7 @@ function AccountBox(props)
             <BoxContainer>
 
                 <TopContainer>
-                    <BackDrop 
-                    variants = {backdropVariants}
-                    initial={false}
-                    animate={isExpanded ? "expanded" : "collapsed"} 
-                    transition={expandingTransition} />
+                    <BackDrop />
                     <HeaderContainer>
                         <HeaderText>Welcome</HeaderText>
                         <HeaderText>Back</HeaderText>

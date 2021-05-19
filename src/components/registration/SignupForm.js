@@ -97,7 +97,6 @@ function SignupForm(props) {
                 //headers: {"Content-Type": "application/json"},
                 body: formData
             })
-
             //2.1 If submission successful, set state "successful"
             .then((backendResponse) => backendResponse.json())
             .then((theJson) => {
