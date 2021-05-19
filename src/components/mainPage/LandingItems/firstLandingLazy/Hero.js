@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import IndividualImage from './IndividualImage'
 import HoverImages from './HoverImages'
 // Importing all images from folder of images for desk objects
-import Bowl from '../../../../../public/images/userGalleryImages/'
+// import Bowl from '../../../../../public/images/userGalleryImages/'
 import Bowl from '../../../../assets/images/heroObjectsResized/bowl.png';
 import Box from '../../../../assets/images/heroObjectsResized/box.png';
 import Bunny from '../../../../assets/images/heroObjectsResized/bunny.png';
