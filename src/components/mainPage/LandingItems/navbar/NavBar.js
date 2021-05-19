@@ -9,7 +9,7 @@ import Logo from "../logo/Logo";
 // Importing the links
 import NavLinks from "./NavLinks.js";
 // Importing the search bar
-import SearchBar from './SearchBar.js';
+import RightSideNavbar from './RightSideNavbar.js';
 // Importing the sizes
 import { DeviceSize } from '../responsive/DeviceSize';
 // Importing the smaller navigation links
@@ -106,7 +106,7 @@ function NavBar(props) {
 
                     <RightSide>
                         {/* If smaller, hide search bar */}
-                        {!isSmaller && <SearchBar />}
+                        {!isSmaller && <RightSideNavbar />}
                         {/* If smaller, render smaller navbar */}
                         {isSmaller && <HamNavLinks />}
                     </RightSide>

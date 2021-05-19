@@ -62,19 +62,37 @@ const AccountIcon = styled(UserAccount)`
     cursor: pointer;
 `;
 
+const LoginButtonNavbar = styled.button`
+    position: absolute;
+    background-color: black;
+    border: none;
+    width: 100px;
+    height: 35px;
+    top: -17px;
+    left: -60px;
+    border-radius: 4px;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #25252A;
+    }
+`;
+
 // Creating the search bar
 // -------------------------- TOGGLE NOT WORKING
-function SearchBar(props) {
+function RightSideNavbar(props) {
 
     return(
         <SearchBarContainer>
-            <SearchBarInput  />
             <SearchIconContainer  >
-                <span><Link to="#"><SearchIcon /></Link></span>
+                <span><Link to='/login'><LoginButtonNavbar>Login</LoginButtonNavbar></Link></span>
                 <span><Link to='/user'><AccountIcon /></Link></span>
             </SearchIconContainer>
         </SearchBarContainer>
     );
 }
 
-export default SearchBar;
+export default RightSideNavbar;
