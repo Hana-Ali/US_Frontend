@@ -166,3 +166,12 @@
     color: #ffffff;
     cursor: pointer;
 }
+
+.profileUsername {
+    text-align: center;
+    margin-top: 6%;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 2vw;
+    font-weight: bold;
+}

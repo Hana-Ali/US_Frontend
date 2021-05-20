@@ -1,5 +1,5 @@
 // importing React
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 // importing motion
 import { motion } from 'framer-motion';
 // importing styled
@@ -29,6 +29,8 @@ import './UserGallery.css';
 import { Link } from 'react-router-dom';
 // importing the icons
 import "@fortawesome/fontawesome-free/css/all.min.css";
+// importing usercontext to be able to use global state
+import { UserContext } from '../../UserContext';
 
 const ProfileMainContent = styled(motion.div)`
     width: 80%;
@@ -63,8 +65,21 @@ const initialContainer = {
             delay: 2.3
         } }
 };
+// Just for the initial 2 (shorter delay)
+const initialContainer2 = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            delay: 2
+        }
+    }
+};
 
 function UserGallery(props) {
+
+    const { userName } = useContext(UserContext);
+
     let imageData = [
         {
             id: 1,
@@ -173,8 +188,14 @@ function UserGallery(props) {
     }
 
     return (
-        <ProfileMainContent
-        >
+        <ProfileMainContent>
+
+            <motion.div className="profileUsername"
+                variants={initialContainer2}
+                initial="hidden"
+                animate="show">
+                <h1>{userName}</h1>
+            </motion.div>
 
             <div className={model ? "model open" : "model"}>
                 <img src={tempImgSrc} />

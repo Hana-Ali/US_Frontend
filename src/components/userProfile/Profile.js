@@ -1,5 +1,5 @@
 // importing react
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 // importing motion
 import { motion } from 'framer-motion';
 // importing user products gallery
@@ -7,10 +7,12 @@ import UserGallery from './UserGallery';
 // importing styled
 import styled from 'styled-components';
 // importing pics
-import ProfilePic from '../../assets/images/userGalleryImages/crisalysSmaller.png';
 import Background from '../../assets/images/userGalleryImages/background.jpg';
 // importing hook to know when in frame
 import { useInView } from 'react-intersection-observer';
+// importing usercontext to be able to use global state
+import { UserContext } from '../../UserContext';
+
 
 const ProfileSideBar = styled(motion.div)`
     width: 20%;
@@ -75,6 +77,8 @@ const otherContainer = {
 
 function Profile(props)
 {
+    const { avatar } = useContext(UserContext);
+
     return (
         <div>
 
@@ -87,7 +91,7 @@ function Profile(props)
                     <ProfilePictureImage
                         variants={otherContainer}
                         initial="hidden"
-                        animate="show" src={ProfilePic}/>
+                        animate="show" src={avatar}/>
                 </ProfilePictureWrapper>
 
             </ProfileSideBar>
