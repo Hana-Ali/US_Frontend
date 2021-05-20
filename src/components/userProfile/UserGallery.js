@@ -207,7 +207,7 @@ function UserGallery(props) {
                 initial="hidden"
                 animate="show">
 
-{/*                 {
+                {
                 productsArray.map(
                     (item, index) => {
                     return (
@@ -228,7 +228,7 @@ function UserGallery(props) {
                         </div>
                     )
                 })
-                } */}
+                }
 
             </motion.div>
 
