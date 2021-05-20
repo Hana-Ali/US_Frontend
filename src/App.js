@@ -13,6 +13,8 @@ import SignupPage from './components/registration/SignupPage';
 import Profile from './components/userProfile/Profile';
 // Importing User Update 
 import ProfileUpdate from './components/profileUpdate/ProfileUpdate';
+// Importing Temp profile
+import ProfileScreen from './ProfileScreen';
 // Importing css
 import './App.css'
 // Importing the react-router things needed
@@ -45,6 +47,7 @@ function App() {
         <LayoutRoute path="/product-5" exact = {true} component ={Product5} />
         <LayoutRoute path="/challenges" exact = {true} component ={Challenges} />
         <LayoutRoute2 path="/update" exact={true} component={ProfileUpdate} />
+        <LayoutRoute2 path='/profile-screen' exact={true} component={ProfileScreen} />
       </Switch>
     </Router>
 
