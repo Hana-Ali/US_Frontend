@@ -48,7 +48,7 @@ function LoginForm(props)
                 body: formData
             })
                 // 2.1 If the submission is successful, set the state "successful"
-                //.then((backendResponse) => backendResponse.json())
+                .then((backendResponse) => backendResponse.json())
                 .then((theJson) => {
                     console.log(theJson);
                     setState("successful");

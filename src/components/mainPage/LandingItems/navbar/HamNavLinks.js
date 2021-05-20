@@ -9,6 +9,8 @@ import { MenuToggle } from './MenuToggle';
 import navbarLinks from './MenuItems';
 // Importing motion
 import { motion } from 'framer-motion';
+// import Link from react-router-fom
+import { Link } from 'react-router-dom';
 
 // Styling the container
 const LinksContainerSmall = styled.div`
@@ -57,7 +59,7 @@ function HamNavLinks(props) {
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.95 }}
                                         >
-                                            <a className="hamText" href={label.path}>{label.title}</a>
+                                            <Link to={label.path} className="hamText">{label.title}</Link>
                                         </motion.li>
                                     )
                                 }
