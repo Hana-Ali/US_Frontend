@@ -44,11 +44,12 @@ const ProfilePictureWrapper = styled.div`
     top: 43%;
     left: 81%;
     z-index: 100;
+    clip-path: circle();
 `;
 
 const ProfilePictureImage = styled(motion.img)`
     position: absolute;
-    clip-path: circle()
+    clip-path: circle();
     height: 100%;
     width: 100%;
     z-index: 100;

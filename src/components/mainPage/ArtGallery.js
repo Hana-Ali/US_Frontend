@@ -12,21 +12,19 @@ import './LandingItems/footer/Footer.css'
 import { motion } from 'framer-motion'
 // Importing styles
 import styled from 'styled-components';
+import '../misc/Assets/bg.css';
 const Margin = styled.div`
     height: 90vh;
 `;
 
 
-function ArtGallery(props)
-{
-    return(
-        <div className="App">
+function ArtGallery(props) {
+    return (
+        <div className="art-gallery">
             <div className="artstart">
                 <h1 className="artstart">Art Gallery</h1>
             </div>
-            <Margin>
-                <Grids/>
-            </Margin>
+            <Grids />
         </div>
     );
 }

@@ -74,7 +74,7 @@
 }
 
 .artstart{
-  background-color: indianred;
+  background-color: transparent;
   height: 45vh;
 }
 h1.artstart{
@@ -85,6 +85,14 @@ h1.artstart{
     text-transform: uppercase;
     position: relative;
     letter-spacing: 50px;
+}
+
+label.artstart{
+  text-align: center;
+    font-weight: bold;
+    font-size: 1vw!important;
+    text-transform: uppercase;
+    letter-spacing: 20px;
 }
 
 div.expanded-div{
@@ -98,3 +106,20 @@ div.meow{
 div.details{
   padding-top: 10px;
 }
+div.art-gallery{
+  width: 95vw;
+  height: 80vw;
+}
+
+.art-row{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  overflow: auto;
+  max-height: 40vh;
+}
+
+.end-of-page{
+  height:85vh;
+}
+

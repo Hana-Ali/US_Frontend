@@ -19,6 +19,7 @@
     "framer-motion": "^4.1.16",
     "masonic": "^3.4.1",
     "mauerwerk": "^2.0.2",
+    "node-sass": "^6.0.0",
     "pro-gallery": "^3.1.17",
     "react": "^17.0.2",
     "react-bnb-gallery": "^1.4.4",
