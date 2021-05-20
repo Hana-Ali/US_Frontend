@@ -1,9 +1,11 @@
 // Importing react
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 // Importing the commons
 import { MinorBoxContainer, FormContainer, Input, MutedLink, SubmitButton } from './CommonItems';
 // Importing link
 import { Link } from 'react-router-dom';
+// importing user context to connect to global state. Note that the loginForm will be a dispatcher
+import { UserContext } from '../../UserContext';
 
 const validatePassword = (password) => {
     const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,16}$/;
@@ -14,6 +16,9 @@ function LoginForm(props)
 {
     // "initial", "sending", "successful", "unsuccessful"
     const [state, setState] = useState("initial");
+    // Since the login screen only dispatches an event, and doesn't care for any values, this is
+    // all it has
+    const { updateUser } = useContext(UserContext);
 
     // Declare undefined variables for later assignment (ref props)
     let userNameField;
@@ -51,6 +56,15 @@ function LoginForm(props)
                 .then((backendResponse) => backendResponse.json())
                 .then((theJson) => {
                     console.log(theJson);
+
+                    updateUser(
+                        {
+                            jsonwebtoken: theJson.jsonwebtoken,
+                            userName: theJson.userName,
+                            email: theJson.email,
+                            avatar: theJson.avatar
+                        }
+                    )
                     setState("successful");
                 })
                 // 2.2 If the submission is unsuccessful, set the state "unsuccessful"
