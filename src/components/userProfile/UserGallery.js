@@ -78,7 +78,7 @@ const initialContainer2 = {
 
 function UserGallery(props) {
 
-    const { userName } = useContext(UserContext);
+    const { userName, productsArray } = useContext(UserContext);
 
     let imageData = [
         {
@@ -207,13 +207,15 @@ function UserGallery(props) {
                 initial="hidden"
                 animate="show">
 
-                {imageData.map((item, index) => {
+{/*                 {
+                productsArray.map(
+                    (item, index) => {
                     return (
-                        <div className="pics" key={index} onClick={() => getImg(item.imgSrc)}>
-                            <img src={item.imgSrc} style={{ width: '100%' }} />
+                        <div className="pics" key={index} onClick={() => getImg(item.pictureUrl)}>
+                            <img src={item.pictureUrl} style={{ width: '100%' }} />
                             <div class="details">
-                                <h2>The <span>Title</span></h2>
-                                <p>Hey this is not my art don't kill me</p>
+                                <h2><span>{item.pictureTitle}</span></h2>
+                                <p>{item.pictureDescription}</p>
                                 <div className="moreDetails">
                                     <StyledLinkUser to='/product/id'>Read<span className="linkUserSpan">More</span></StyledLinkUser>
                                     <div class="iconLinks">
@@ -225,7 +227,8 @@ function UserGallery(props) {
                             </div>
                         </div>
                     )
-                })}
+                })
+                } */}
 
             </motion.div>
 

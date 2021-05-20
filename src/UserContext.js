@@ -15,7 +15,8 @@ const initialState = {
     jsonwebtoken: localStorage.getItem('jsonwebtoken') || undefined,
     loggedIn: localStorage.getItem('userName') || false,
     email: localStorage.getItem('email') || undefined,
-    avatar: localStorage.getItem('avatar') || undefined
+    avatar: localStorage.getItem('avatar') || undefined,
+    productsArray: localStorage.getItem('productsArray') || undefined
 }
 
 // This function is responsible for changing the global state (it's what changes the ticker at the airport)
@@ -50,6 +51,7 @@ export const UserContextProvider = ({ children }) => {
             localStorage.setItem('email', payload.email);
             localStorage.setItem('avatar', payload.avatar);
             localStorage.setItem('jsonwebtoken', payload.jsonwebtoken);
+            localStorage.setItem('productsArray', payload.productsArray);
 
             dispatch(
                 {
@@ -69,6 +71,7 @@ export const UserContextProvider = ({ children }) => {
                 loggedIn: state.loggedIn,
                 avatar: state.avatar,
                 email: state.email,
+                productsArray: state.productsArray,
                 updateUser
             }}
         >{children}
