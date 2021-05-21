@@ -42,7 +42,8 @@ const reducer = (state=false, action) => {
 // function updateUser() [THE PUBLISHER SETS THE CHAIN REACTION]
 export const UserContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-
+    console.log('state: ', state);
+  
     // Declare functions to send payload to reducer
     const updateUser = useCallback(
         (payload) => {
@@ -51,7 +52,8 @@ export const UserContextProvider = ({ children }) => {
             localStorage.setItem('email', payload.email);
             localStorage.setItem('avatar', payload.avatar);
             localStorage.setItem('jsonwebtoken', payload.jsonwebtoken);
-            localStorage.setItem('productsArray', payload.productsArray);
+            localStorage.setItem('productsArray', JSON.stringify(payload.productsArray));
+            console.log('productsArray is: ', JSON.stringify(payload.productsArray));
 
             dispatch(
                 {

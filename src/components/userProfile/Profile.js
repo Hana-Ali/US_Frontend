@@ -50,6 +50,7 @@ const ProfilePictureWrapper = styled.div`
 const ProfilePictureImage = styled(motion.img)`
     position: absolute;
     clip-path: circle();
+    object-fit: cover;
     height: 100%;
     width: 100%;
     z-index: 100;

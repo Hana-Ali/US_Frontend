@@ -79,6 +79,8 @@ const initialContainer2 = {
 function UserGallery(props) {
 
     const { userName, productsArray } = useContext(UserContext);
+    const productsArr = JSON.parse(productsArray)
+    console.log('productsArray', productsArray);
 
     let imageData = [
         {
@@ -208,7 +210,7 @@ function UserGallery(props) {
                 animate="show">
 
                 {
-                productsArray.map(
+                    productsArr.map(
                     (item, index) => {
                     return (
                         <div className="pics" key={index} onClick={() => getImg(item.pictureUrl)}>
@@ -228,7 +230,7 @@ function UserGallery(props) {
                         </div>
                     )
                 })
-                }
+                }  
 
             </motion.div>
 
