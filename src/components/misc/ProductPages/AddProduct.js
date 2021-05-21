@@ -7,6 +7,17 @@ import {SubmitButtonSmall} from '../../registration/CommonItems';
 import styled from 'styled-components';
 import '../../mainPage/LandingItems/signUp/SignUp.css'
 
+// RegEx (Regular Expressions)
+const validateEmail = (email) => {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+const validatePassword = (password) => {
+    const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,16}$/;
+    return re.test(password);
+}
+
 function AddProduct() {
 
     // "initial", "sending", "successful", "unsuccessful", "validation error"
@@ -37,7 +48,7 @@ function AddProduct() {
         )
     }
 
-    const addProduct = () => {
+    const register = () => {
 
         const errors = [];
 
@@ -53,6 +64,9 @@ function AddProduct() {
         }
         if(colorField.value.length == 0) {
             errors.push("Please specify the main color of the piece!");
+        }
+        if(productImageField.value.length == 0) {
+            errors.push("You cannot upload an emtpy product!");
         }
         if(associatedUsernameField.value.length == 0) {
             errors.push("Please enter an identifiable author name!");
@@ -98,55 +112,54 @@ function AddProduct() {
     return (
         <div className="base-container">
 
-            <div className="content">
-                <div className="image">
-                    <img src={loginImg} />
-                </div>
-                <div className="form">
-                    <div className="form-group">
-                    <label>Title</label>
-                    <input  
-                    ref={ (elem)=>titleField = elem } type="text" placeholder="What is my name?"
-                    />
-                    </div>
-                    <div className="form-group">
-                    <label htmlFor="Description">Description</label>
-                    <input  
-                    ref={ (elem)=>descriptionField = elem } type="text" placeholder="Am I just a name :("
-                    />
-                    </div>
-                    <div className="form-group">
-                    <label>Price</label>
-                    <input  
-                    ref={ (elem)=>priceField = elem } type="text" placeholder="What's my worth..."
-                    />
-                    </div>
-                    <div className="form-group">
-                    <label>Color</label>
-                    <input  
-                    ref={ (elem)=>colorField = elem } type="text" placeholder="I mean.."
-                    />
-                    </div>
-                    <div className="form-group">
-                    <label>Author Username</label>
-                    <input  
-                    ref={ (elem)=>associatedUsernameField = elem } type="text" placeholder="Who is my father/mother/creator?"
-                    />
-                    </div>
-                    <div className="form-group">
-                    <label>Upload Product</label>
-                    <input  
-                    onChange={attachFile}
-                    ref={ (elem)=>productImageField = elem } type="file" accept=".png, .jpg, .jpeg, .svg" placeholder="What do I look like?"
-                    />
-                    </div>
-                </div>
+        <div className="content">
+          <div className="image">
+            <img src={loginImg} />
+          </div>
+          <div className="form">
+            <div className="form-group">
+              <label>Title</label>
+              <input  
+              ref={ (elem)=>titleField = elem } type="text" name="title" placeholder="What is my name?"
+              />
             </div>
-
+            <div className="form-group">
+              <label htmlFor="Description">Description</label>
+              <input  
+              ref={ (elem)=>descriptionField = elem } type="text"  placeholder="Am I just a name :("
+              />
+            </div>
+            <div className="form-group">
+              <label>Price</label>
+              <input  
+              ref={ (elem)=>priceField = elem } type="text"  placeholder="What's my worth..."
+              />
+            </div>
+            <div className="form-group">
+              <label>Color</label>
+              <input  
+              ref={ (elem)=>colorField = elem } type="text"  placeholder="I mean.."
+              />
+            </div>
+            <div className="form-group">
+              <label>Author Username</label>
+              <input  
+              ref={ (elem)=>associatedUsernameField = elem } type="text"  placeholder="Who is my father/mother/creator?"
+              />
+            </div>
+            <div className="form-group">
+              <label for="productImage" >Upload Product</label>
+              <input  
+              onChange={attachFile}
+              ref={ (elem)=>productImageField = elem } type="file" accept=".png, .jpg, .jpeg, .svg"  placeholder="What do I look like?" id="productImage" aria-describedby="productImage"
+              />
+            </div>
+          </div>
+        </div>
             {
                 state !== "sending" && state !== "successful" && 
                 <div className="button">
-                <button class="signButtonsmall" onClick={addProduct}>SUBMIT!</button>
+                <button class="signButtonsmall" onClick={register}>SUBMIT!</button>
                 </div>
 
             }
