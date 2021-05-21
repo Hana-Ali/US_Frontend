@@ -47,7 +47,7 @@ function LoginForm(props)
             formData.append('userName', userNameField.value);
             formData.append('password', passwordField.value);
 
-            fetch(`${process.env.REACT_APP_API_ENDPOINT}/user/login`, {
+            fetch(`${process.env.REACT_APP_API_ENDPOINT}user/login`, {
                 method: 'POST',
                 // headers: {"Content-Type": "application/json"},
                 body: formData
