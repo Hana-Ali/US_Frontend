@@ -1,5 +1,5 @@
 // Importing react
-import React, { useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 // Importing MediaQuery
 import { useMediaQuery } from "react-responsive";
 // Importing styled to be able to style the page
@@ -8,12 +8,15 @@ import styled from "styled-components";
 import Logo from "../logo/Logo";
 // Importing the links
 import NavLinks from "./NavLinks.js";
-// Importing the search bar
-import RightSideNavbar from './RightSideNavbar.js';
 // Importing the sizes
 import { DeviceSize } from '../responsive/DeviceSize';
 // Importing the smaller navigation links
 import HamNavLinks from "./HamNavLinks";
+// importing logout
+import LogoutButtonNavbar from './Logout';
+import LoginButtonNavbar from './Login';
+// import context
+import { UserContext } from '../../../../UserContext';
 
 // ---------------------------- Stylizing the navbar using styled-components
 
@@ -86,6 +89,8 @@ function NavBar(props) {
         navbarClasses.push('scrolled');
     }
 
+    const { loggedIn } = useContext(UserContext);
+
     // Setting the return value, or the component
     return(
         // Note that rather than going insane trying to create responsive width-changing, we use the bootstrap navbar container here so that we can inherit the 
@@ -105,8 +110,9 @@ function NavBar(props) {
                     </Center>
 
                     <RightSide>
-                        {/* If smaller, hide search bar */}
-                        {!isSmaller && <RightSideNavbar />}
+                        {/* If bigger, show search bar */}
+                        {!isSmaller && !{ loggedIn } && <LoginButtonNavbar />}
+                        {!isSmaller && { loggedIn } && <LogoutButtonNavbar />}
                         {/* If smaller, render smaller navbar */}
                         {isSmaller && <HamNavLinks />}
                     </RightSide>
